@@ -1,0 +1,72 @@
+{% for post in posts %}
+    <div class = "card">
+        <div class = "card-header">
+            <h1> {{ post.get('user').get('username') }}</h1>
+            <i class="fas fa-ellipsis-h"></i>
+        </div>
+
+        <div>
+            {% set alt_text = "picture posted by " + post.get('user').get('username') %}
+            <img class = "card-img" src={{ (post.get('user').get('image_url')).replace("/300/200", "/600/400") }} alt="{{ alt_text }}" /> 
+        </div>
+
+        <div class = "card-info">
+            <div class = "top-bar" >
+                <div class = "left-top-bar">
+                    <i class="far fa-heart"></i>
+                    <i class="far fa-comment"></i>
+                    <i class="far fa-paper-plane"></i>
+                </div> 
+                <div class = "right-top-bar">
+                    <i class="far fa-bookmark"></i>
+                </div> 
+            </div>
+
+            <div class = "likes" >
+                {{ post.get('likes') }} likes
+            </div>
+
+            <div class = "caption" >
+                <span class = "named"> {{ post.get('user').get('username') }} 
+
+                </span> 
+                {% if post.get('title')|length > 250 %}
+                    {{ (post.get('title'))[:260] + "..." }}
+                    <a href="#more" class = "more">
+                        more
+                    </a>
+                {% else %}
+                    {{ post.get('title') }}
+                {% endif %}   
+            </div>
+
+            <div class = "comments" >
+
+                {% if post.get('comments')|length > 1 %}
+                    <a href="#view_comments" class = "comment_view">
+                        View all {{ post.get('comments')|length }} comments
+                    </a>
+                {% endif %}
+
+                {% if post.get('comments')|length > 0 %}
+                    <div class = "comment">
+                        <span class = "named"> {{ (post.get('comments')[0]).get('user').get('username') }} 
+                        </span> {{ (post.get('comments')[0]).get('text') }} 
+                    </div>
+                {% endif %}
+
+                <a class = "timestamp" >  {{ (post.get('display_time')).upper() }} </a>
+            </div>
+        </div>
+
+        <div class = "card-interact">
+            <div class = "interact-comment">
+                <i class="far fa-smile"></i>
+                <a> Add a comment... </a>
+            </div>
+            <a href="#post">
+                Post
+            </a>
+        </div>
+    </div>
+{% endfor %}

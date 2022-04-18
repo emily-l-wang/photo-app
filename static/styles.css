@@ -1,0 +1,269 @@
+html {
+    scroll-behavior: smooth;
+    background-color: rgb(240, 240, 240);
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-family: Comfortaa;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    padding-left: 2%;
+    padding-right: 4%;
+    margin: 0;
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+}
+
+nav > h1 {
+    font-weight: bolder;
+}
+
+nav > ul > li > a {
+    text-decoration: none;
+}
+
+nav > ul > li {
+    margin: 2%;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0px;
+    display: flex;
+    width: 40%;
+    justify-content: flex-end;
+}
+
+section ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+
+aside {
+    margin-left: 60%;
+    margin-right: 7%;
+    margin-top: 1%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 65px;
+}
+
+aside section {
+    display: flex;
+    align-items: center;
+    margin: 2%;
+}
+
+.recos {
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+    width: 100%;
+}
+
+.recos section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.recos h2 {
+    color: #7a7575;
+    font-size: 20px;
+}
+
+.circle {
+    padding: 1%;
+    /* height: 80%; */
+    border-radius: 50%;
+}
+
+.reco-person > a {
+    text-decoration: none;
+}
+
+.not-follow {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.reco-person ul li {
+    font-weight: bold;
+}
+
+.not-follow > ul > li {
+    padding-left: 10%;
+    width: 110%;
+}
+
+.reco-person ul li a {
+    color: #5b5b5b;
+}
+
+aside > section > h1 {
+    font-size: 28px;
+    margin-left: 3%;
+}
+
+.stories {
+    display: flex;
+    width: 50%;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1%;
+    margin-left: 10%;
+    background-color: rgb(255, 255, 255);
+    margin-top: 8%;
+}
+
+.stories-person {
+    margin-right: 2%;
+    padding: 1%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.stories-person > h1 {
+    font-size: 12px;
+    color: #696969;
+}
+
+.card {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-top: 3%;
+    background-color: rgb(255, 255, 255);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 2%;
+    padding-left: 4%;
+    align-items: center;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+}
+
+.card-info {
+    display: flex;
+    padding: 2%;
+    flex-direction: column;
+}
+
+.top-bar {
+    display: flex;
+    padding: 2%;
+    justify-content: space-between;
+}
+
+.likes {
+    margin-left: 2%;
+    font-weight: bold;
+}
+
+.caption {
+    padding: 2%;
+    padding-bottom: 0;
+}
+
+.comments {
+    display: flex;
+    flex-direction: column;
+    padding: .5%;
+    padding-bottom: 0;
+}
+
+.comments * {
+    margin: .7%;
+}
+
+.named {
+    font-weight: bold;
+}
+
+.more, .comment_view {
+    text-decoration: none;
+}
+
+.comment_view {
+    margin-left: 2%;
+}
+
+
+.timestamp {
+    color: #676767;
+}
+
+.card-interact {
+    display: flex;
+    justify-content: space-between;
+    padding: 1%;
+    align-items: center;
+    border-top: solid 2px rgb(240, 240, 240);
+}
+
+.card-interact > a {
+    text-decoration: none;
+}
+
+.interact-comment {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    justify-content: space-evenly;
+    padding: 1%;
+}
+
+.interact-comment a {
+    width: 90%;
+}
+
+@media only screen and (max-width: 600px) {
+    aside {
+        display: none;
+    }
+    .stories {
+        width: 100%;
+        margin: 0;
+        margin-top: 20%;
+        padding: 0;
+    }
+    .stories-person > h1 {
+        font-size: 10px;
+    }
+    .card {
+        width: 100%;
+        margin: 0;
+        margin-top: 2%;
+        padding: 0;
+    }
+}
+
