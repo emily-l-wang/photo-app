@@ -1,0 +1,515 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* background-color: #fafafa; */
+    background-color: #f2f2f2;
+}
+
+aside, main, nav {
+    padding: 10px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Comfortaa', cursive;
+}
+a, a:visited, a:hover, a:link {
+    /* font-weight: 600; */
+    /* text-decoration: none; */
+    color: rgb(44, 105, 155);
+}
+a:hover {
+    color: #777;
+}
+button.link {
+    color: rgb(44, 105, 155);
+    background-color: transparent;
+    border-width: 0px;
+}
+button.link:hover {
+    color: #777;
+}
+
+button.link.following {
+    padding: 5px 10px !important;
+}
+button.link.following.active {
+    background-color: white;
+    padding: 5px 10px !important;
+    border: solid 1px #CCC;
+    border-radius: 4px;
+}
+header {
+    margin-top: 20px;
+}
+
+nav {
+    position: sticky;
+    height: 70px;
+    width: 100vw;
+    background-color: white;
+    border-bottom: solid #dbdbdb 1px;
+    left: 0px;
+    top: 0px;
+    padding: 0px 3vw;
+}
+
+nav, nav ul, .card .header, .card .buttons, .card .add-comment {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav ul {
+    list-style-type: none;
+}
+li {
+    margin-left: 30px;
+}
+
+aside {
+    position: fixed;
+    right: 0px;
+    top: 70px;
+    width: calc(40vw - 6px);
+    /* background-color: #fafafa; */
+    background-color: #f2f2f2;
+    height: calc(100vh - 100px);
+    padding-left: 30px;
+}
+main {
+    /* margin-top: 70px; */
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#posts {
+    width: 50vw;
+}
+
+.stories {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 50vw;
+    min-width: 540px;
+    border: solid 1px #dbdbdb;
+    margin-bottom: 30px;
+    background-color: #fff;
+    overflow: hidden;
+}
+.stories > div {
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.stories > div .pic {
+    min-width: 50px;
+    min-height: 50px;
+    border: solid 3px #dbdbdb;
+    border-radius: 27px;
+}
+.stories p {
+    margin-top: 4px;
+    margin-bottom: 0px;
+    font-size: 0.80em;
+    color: #999;
+    width: 66px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.card {
+    border: solid 1px #dbdbdb;
+    margin-bottom: 30px;
+    background-color: #fff;
+    width: 50vw;
+    min-width: 540px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+.card .header, .card .info {
+    padding: 10px;
+    color: #444;
+}
+
+.card .buttons {
+    font-size: 1.3em;
+    padding: 5px;
+}
+.card .buttons i {
+    margin-right: 4px;
+}
+
+.card button.link {
+    font-size: 1em;
+}
+
+.card .caption, .card .comments, .likes {
+    padding: 0px 5px;
+}
+.card .caption p, .card .comments p {
+    margin: 8px 0px 3px 0px;
+    font-size: 0.9em;
+}
+.card .timestamp {
+    color: #999;
+    text-transform: uppercase;
+    font-size: 0.70em !important;
+    margin-bottom: 5px;
+}
+/* 
+.card .add-comment {
+    border-top: solid 1px #dbdbdb;
+    padding: 10px 15px;
+}
+
+.card .add-comment .input-holder {
+    width: 90%;
+}
+
+.card .add-comment input, .card .add-comment input:focus, .card .add-comment input:focus-visible {
+    border-width: 0px;
+    outline: none;
+    font-size: 0.95em;
+    width: 85%;
+    padding: 10px 0px;
+}
+.card .add-comment i {
+    font-size: 1.3em;
+    margin-right: 10px;
+} */
+
+.visuallyhidden {
+    display: none;
+}
+
+section ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    margin: 2%;
+}
+
+.recos {
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+    width: 100%;
+}
+
+.recos section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 26vw;
+}
+
+.recos h2 {
+    color: #7a7575;
+    font-size: 20px;
+}
+
+.circle {
+    padding: 1%;
+    /* height: 80%; */
+    border-radius: 50%;
+    min-width: 30px;
+    min-height: 30px;
+}
+
+.not-follow {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.reco-person ul li {
+    font-weight: bold;
+}
+
+.not-follow > ul > li {
+    padding-left: 10%;
+    width: 110%;
+}
+
+.reco-person ul li a {
+    color: #5b5b5b;
+}
+
+aside > section > h1 {
+    font-size: 28px;
+    margin-left: 3%;
+}
+
+.recos button {
+    padding: 5px 10px;
+    border: 1px;
+    border-color: #999;
+    border-radius: 4px;
+}
+
+.follow {
+    background: transparent;
+}
+
+.unfollow {
+    background: white;
+}
+
+
+.card {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 3%;
+    background-color: rgb(255, 255, 255);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 2%;
+    padding-left: 4%;
+    align-items: center;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+}
+
+.card-info {
+    display: flex;
+    padding: 2%;
+    flex-direction: column;
+}
+
+.top-bar {
+    display: flex;
+    padding: 2%;
+    padding-left: 0%;
+    padding-right: 0%;
+    justify-content: space-between;
+}
+
+.card button {
+    background: transparent;
+    border: 0px;
+}
+
+.card-interact button {
+    color: rgb(44, 105, 155);
+    font-size: 1em;
+    padding-right: 2%;
+}
+
+.top-bar button {
+    font-size: 1.3em;
+}
+
+.likes {
+    font-weight: bold;
+}
+
+.caption {
+    padding: 2%;
+    padding-bottom: 0;
+    margin-top: 1%;
+}
+
+.comments {
+    display: flex;
+    flex-direction: column;
+    padding: .5%;
+    padding-bottom: 0;
+    align-items: flex-start;
+}
+
+.comments * {
+    margin-top: .7%;
+    margin-bottom: .7%;
+}
+
+.named {
+    font-weight: bold;
+}
+
+.open {
+    margin-left: 2%;
+    color: rgb(44, 105, 155);
+    font-size: 1em;
+}
+
+.timestamp {
+    color: #676767;
+}
+
+.card-interact {
+    display: flex;
+    justify-content: space-between;
+    padding: 1%;
+    align-items: center;
+    border-top: solid 2px rgb(240, 240, 240);
+}
+
+.interact-comment {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    justify-content: space-between;
+    padding: 1%;
+}
+
+.interact-comment input {
+    width: 90%;
+    height: 40px;
+    font-size: 1em;
+    border: none;
+    outline: none;
+}
+
+.fa-red {
+    color: red;
+}
+
+.modal-bg {
+    background: rgba(50, 50, 50, 0.8);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    width: 90vw;
+    height: auto;
+    max-height: 80vh;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal button {
+    background: transparent;
+    border: 0px;
+}
+
+.close {
+    position: fixed;
+    top: 20px;
+    right: 70px;
+    font-size: 50px;
+    color: white;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.modal-body {
+    overflow-y: auto;
+    display: flex;
+}
+
+.modal-comment {
+    display: flex;
+    align-items: flex-start;
+    margin-top: .5%;
+    padding: 1%;
+}
+
+.modal-comment * {
+    padding: 1%;
+}
+
+.modal-comment .circle {
+    width: 10%;
+}
+
+.modal-comment .mid {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.modal-comment button {
+    font-size: 1em;
+}
+
+.modal-img {
+    position: sticky;
+    left: 0px;
+    top: 0px;
+    padding: 0;
+    margin: 0;
+    width: 60vw;
+    height: 80vh;
+}
+
+.fa-white {
+    color: white;
+}
+
+.modal-profile {
+    display: flex;
+    align-items: center;
+    position: sticky;
+    background-color: white;
+    border-bottom: solid #dbdbdb 1px;
+    margin-bottom: 5%;
+    right: 0px;
+    top: 0px;
+    padding: 1%;
+}
+
+.modal-profile .circle {
+    width: 10%;
+    margin-right: 5%;
+}
+
+@media (max-width: 900px) {
+    aside {
+        display: none;
+    }
+    main {
+        width: 100vw;
+        padding: 0px;
+        align-items: center;
+    }
+    .card, .stories {
+        width: 75vw;
+        min-width: auto;
+    }
+}
+
+@media (max-width: 700px) {
+    .card, .stories {
+        width: 90vw;
+    }
+}
