@@ -1,5 +1,6 @@
 from flask import Response, request
 from flask_restful import Resource
+import flask_jwt_extended
 from models import LikeComment, db, Comment
 import json
 from views import get_authorized_user_ids
@@ -9,6 +10,7 @@ class PostLikesListEndpoint(Resource):
     def __init__(self, current_user):
         self.current_user = current_user
     
+    @flask_jwt_extended.jwt_required()
     def post(self):
         body = request.get_json()
         if not body.get("comment_id"):
@@ -41,6 +43,7 @@ class PostLikesDetailEndpoint(Resource):
     def __init__(self, current_user):
         self.current_user = current_user
     
+    @flask_jwt_extended.jwt_required()
     def delete(self, id):
         like = LikeComment.query.get(id)
         if not like:
@@ -52,18 +55,17 @@ class PostLikesDetailEndpoint(Resource):
         db.session.commit()     
         return Response(json.dumps({"message": "like was successfully deleted"}), mimetype="application/json", status=200)
 
-
 def initialize_routes(api):
     api.add_resource(
         PostLikesListEndpoint, 
         '/api/comments/likes', 
         '/api/comments/likes/', 
-        resource_class_kwargs={'current_user': api.app.current_user}
+        resource_class_kwargs={'current_user': flask_jwt_extended.current_user}
     )
 
     api.add_resource(
         PostLikesDetailEndpoint, 
         '/api/comments/likes/<int:id>', 
         '/api/comments/likes/<int:id>/',
-        resource_class_kwargs={'current_user': api.app.current_user}
+        resource_class_kwargs={'current_user': flask_jwt_extended.current_user}
     )
