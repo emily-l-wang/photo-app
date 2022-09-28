@@ -1,3 +1,3 @@
-## Installation
+## Photo App
 
-See [https://cs396-web-dev.github.io/spring2022/assignments/hw03](https://cs396-web-dev.github.io/spring2022/assignments/hw03)
+Project completed as part of class at Northwestern. Imitates features of Instagram using Flask and SQLAlchemy for the REST API, React, HTML, and CSS for the front-end client, and [Heroku](https://final-insta.herokuapp.com/) for deployment.
