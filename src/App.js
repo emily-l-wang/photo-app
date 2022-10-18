@@ -19,7 +19,7 @@ class App extends React.Component {
     }
 
     getProfile() {
-        fetch('/api/profile', {
+        fetch('https://grinsta.herokuapp.com/api/profile', {
             headers: getHeaders()
         })
         .then(response => response.json())

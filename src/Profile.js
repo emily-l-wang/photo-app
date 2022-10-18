@@ -9,7 +9,6 @@ class Profile extends React.Component {
     }
 
     componentDidMount() {
-        // fetch posts
         console.log('Profile component mounted');
     }
 

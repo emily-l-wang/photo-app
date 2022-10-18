@@ -30,7 +30,7 @@ class AddComment extends React.Component {
             "text": this.state.value
         };
         
-        fetch("/api/comments/", {
+        fetch("https://grinsta.herokuapp.com/api/comments/", {
                 method: "POST",
                 headers: getHeaders(),
                 body: JSON.stringify(postData)

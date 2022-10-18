@@ -27,7 +27,7 @@ class LikeButton extends React.Component {
             "post_id": this.props.postId
         };
 
-        fetch("/api/posts/likes/", {
+        fetch("https://grinsta.herokuapp.com/api/posts/likes/", {
             method: "POST",
             headers: getHeaders(),
             body: JSON.stringify(likeData)
@@ -41,7 +41,7 @@ class LikeButton extends React.Component {
 
     unlike() {
         console.log('code to unlike the post');
-        fetch(`/api/posts/likes/${this.props.likeId}`, {
+        fetch(`https://grinsta.herokuapp.com/api/posts/likes/${this.props.likeId}`, {
             method: "DELETE",
             headers: getHeaders()
         })

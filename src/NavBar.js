@@ -9,7 +9,6 @@ class NavBar extends React.Component {
     }
 
     componentDidMount() {
-        // fetch posts
         console.log('NavBar component mounted');
     }
 

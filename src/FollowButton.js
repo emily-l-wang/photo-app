@@ -25,7 +25,7 @@ class FollowButton extends React.Component {
             "user_id": this.props.userId
         };
 
-        fetch("/api/following/", {
+        fetch("https://grinsta.herokuapp.com/api/following/", {
             method: "POST",
             headers: getHeaders(),
             body: JSON.stringify(followData)
@@ -38,7 +38,7 @@ class FollowButton extends React.Component {
     }
 
     unfollow() {
-        fetch(`/api/following/${this.props.followingId}`, {
+        fetch(`https://grinsta.herokuapp.com/api/following/${this.props.followingId}`, {
             method: "DELETE",
             headers: getHeaders()
         })
